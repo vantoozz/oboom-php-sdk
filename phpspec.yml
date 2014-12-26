@@ -1,0 +1,7 @@
+formatter.name: pretty
+
+suites:
+  oboom:
+    namespace: Vantoozz\Oboom
+    src_path: src/Vantoozz/Oboom
+    spec_path: ci/phpspec
