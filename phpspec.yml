@@ -3,5 +3,5 @@ formatter.name: pretty
 suites:
   oboom:
     namespace: Vantoozz\Oboom
-    src_path: src/Vantoozz/Oboom
+    src_path: src
     spec_path: ci/phpspec
