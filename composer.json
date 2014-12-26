@@ -1,0 +1,26 @@
+{
+  "name": "vantoozz/oboom-php-sdk",
+  "description": "PHP SDK for oboom.com API",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "keywords": [
+    "oboom",
+    "sdk",
+    "api"
+  ],
+  "authors": [
+    {
+      "name": "Ivan Nikitin",
+      "email": "vantoozz@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "guzzlehttp/guzzle": "4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vantoozz\\": "src/Vantoozz"
+    }
+  }
+}

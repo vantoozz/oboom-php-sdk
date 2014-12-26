@@ -1,0 +1,6 @@
+.idea/
+.idea_modules/
+vendor/
+npm-debug.log
+atlassian-ide-plugin.xml
+composer.lock
