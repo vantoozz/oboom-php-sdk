@@ -1,0 +1,16 @@
+setup:
+    shell:
+        - "cd %BUILD_PATH% && /usr/local/bin/composer install"
+test:
+    php_loc:
+        directory: "src"
+    php_cpd:
+        path: "src"
+    php_code_sniffer:
+        path: "src"
+        standard: "ci/phpcs/phpcs.xml"
+        allowed_warnings: 20
+        encoding: "utf-8"
+    php_docblock_checker:
+        path: "src"
+    php_spec:
