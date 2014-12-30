@@ -2,6 +2,7 @@
 
 namespace spec\Vantoozz\Oboom;
 
+use InvalidArgumentException;
 use PhpSpec\ObjectBehavior;
 use Vantoozz\Oboom\Auth;
 use Vantoozz\Oboom\Transport\TransportInterface;
@@ -22,13 +23,19 @@ class APISpec extends ObjectBehavior
 
         $auth->getToken()->willReturn('cb597b3e-cfc4-4329-abe0-5dc2b64a8e9a');
 
-        $transport->call('https://www.oboom.com/method', [
+        $transport->call('https://api.oboom.com/method', [
             'param1'   => 'aaa',
             'param2'   => 'bbb',
             'token' => 'cb597b3e-cfc4-4329-abe0-5dc2b64a8e9a'
         ])->shouldBeCalled();
 
-        $this->call('/method', ['param1'=>'aaa', 'param2'=>'bbb']);
+        $this->call('api.oboom.com', '/method', ['param1'=>'aaa', 'param2'=>'bbb']);
+    }
+
+    public function it_requires_correct_endpoint(){
+        $this
+            ->shouldThrow(new InvalidArgumentException('No such endpoint'))
+            ->during('call', ['incorrect_endpoint', '/method']);
     }
 
 

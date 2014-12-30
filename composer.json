@@ -1,6 +1,6 @@
 {
   "name": "vantoozz/oboom-php-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "PHP SDK for oboom.com API",
   "minimum-stability": "stable",
   "license": "MIT",
@@ -20,7 +20,8 @@
     "guzzlehttp/guzzle": "4.*"
   },
   "require-dev": {
-    "phpspec/phpspec": "~2.0"
+    "phpspec/phpspec": "~2.0",
+    "silex/silex": "~1"
   },
   "autoload": {
     "psr-4": {
