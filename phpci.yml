@@ -11,3 +11,4 @@ test:
     php_docblock_checker:
         path: "src"
     php_spec:
+        bootstrap: "phpspec.yml"
