@@ -42,9 +42,9 @@ class GuzzleTransport extends AbstractTransport
         $response = $response->json();
 
         if (200 !== $response[0]) {
-            throw new RuntimeException($response[1]);
+            throw new RuntimeException($response[1], $response[0]);
         }
-        return $response[1];
+        return $response;
     }
 
 
