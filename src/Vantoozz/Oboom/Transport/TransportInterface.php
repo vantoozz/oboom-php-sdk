@@ -2,14 +2,12 @@
 
 namespace Vantoozz\Oboom\Transport;
 
-
 /**
  * Interface TransportInterface
  * @package Vantoozz\Oboom\Transport
  */
 interface TransportInterface
 {
-
     /**
      * @param $url
      * @param $params
