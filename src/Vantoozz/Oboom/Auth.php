@@ -69,11 +69,11 @@ class Auth
             'source' => '/#app'
         ]);
 
-        if (empty($data['session'])) {
+        if (empty($data[1]['session'])) {
             throw new RuntimeException('API error');
         }
 
-        $this->token = $data['session'];
+        $this->token = $data[1]['session'];
 
         return $this;
     }

@@ -47,7 +47,7 @@ class AuthSpec extends ObjectBehavior
             'auth'   => 'john@example.com',
             'pass'   => 'f9cc0aeaefc9fb9cab93bc1f3c426958',
             'source' => '/#app'
-        ])->shouldBeCalled()->willReturn(['session' => 'cb597b3e-cfc4-4329-abe0-5dc2b64a8e9a']);
+        ])->shouldBeCalled()->willReturn([0 => 200, 1 => ['session' => 'cb597b3e-cfc4-4329-abe0-5dc2b64a8e9a']]);
 
         $this->setConfig([
             'username' => 'john@example.com',
@@ -55,13 +55,13 @@ class AuthSpec extends ObjectBehavior
         ])->login()->shouldReturn($this);
     }
 
-    public function it_handle_failed_login(TransportInterface $transport)
+    public function it_handle_bad_api_response(TransportInterface $transport)
     {
         $transport->call('https://www.oboom.com/1/login', [
             'auth'   => 'john@example.com',
             'pass'   => 'f9cc0aeaefc9fb9cab93bc1f3c426958',
             'source' => '/#app'
-        ])->shouldBeCalled()->willReturn(['some_field' => 'some_value']);
+        ])->shouldBeCalled()->willReturn(123);
 
         $this->setConfig([
             'username' => 'john@example.com',
@@ -76,7 +76,7 @@ class AuthSpec extends ObjectBehavior
             'auth'   => 'john@example.com',
             'pass'   => 'f9cc0aeaefc9fb9cab93bc1f3c426958',
             'source' => '/#app'
-        ])->shouldBeCalled()->willReturn(['session' => 'cb597b3e-cfc4-4329-abe0-5dc2b64a8e9a']);
+        ])->shouldBeCalled()->willReturn([0 => 200, 1 => ['session' => 'cb597b3e-cfc4-4329-abe0-5dc2b64a8e9a']]);
 
         $this->setConfig([
             'username' => 'john@example.com',
