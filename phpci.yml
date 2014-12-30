@@ -1,6 +1,3 @@
-setup:
-    shell:
-        - "cd %BUILD_PATH% && /usr/local/bin/composer install"
 test:
     php_loc:
         directory: "src"
