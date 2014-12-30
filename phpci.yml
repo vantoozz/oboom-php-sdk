@@ -1,6 +1,6 @@
 setup:
-    shell:
-        - "cd %BUILD_PATH% && /usr/local/bin/composer install"
+    composer:
+        prefer_dist: true
 test:
     php_loc:
         directory: "src"

@@ -6,9 +6,12 @@ use Exception;
 use GuzzleHttp\Client;
 use RuntimeException;
 
+/**
+ * Class GuzzleTransport
+ * @package Vantoozz\Oboom\Transport
+ */
 class GuzzleTransport extends AbstractTransport
 {
-
     /**
      * @var Client
      */
@@ -44,8 +47,7 @@ class GuzzleTransport extends AbstractTransport
         if (200 !== $response[0]) {
             throw new RuntimeException($response[1], $response[0]);
         }
+
         return $response;
     }
-
-
 }
