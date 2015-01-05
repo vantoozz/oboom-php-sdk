@@ -1,6 +1,6 @@
 {
   "name": "vantoozz/oboom-php-sdk",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "PHP SDK for oboom.com API",
   "minimum-stability": "stable",
   "license": "MIT",
