@@ -1,6 +1,6 @@
 {
   "name": "vantoozz/oboom-php-sdk",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "PHP SDK for oboom.com API",
   "minimum-stability": "stable",
   "license": "MIT",
@@ -16,7 +16,8 @@
     }
   ],
   "require": {
-    "php": ">=5.5.0",
+    "php": ">=5.4.0",
+    "eloquent/pbkdf2-compat": "*",
     "guzzlehttp/guzzle": "4.*"
   },
   "require-dev": {
