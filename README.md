@@ -1,3 +1,3 @@
 oboom-php-sdk
 =============
-[![master](http://ci.indielife.ru/build-status/image/3?branch=master)](http://ci.indielife.ru/project/view/3)
+[![Build Status](https://travis-ci.org/vantoozz/oboom-php-sdk.svg?branch=develop)](https://travis-ci.org/vantoozz/oboom-php-sdk)
