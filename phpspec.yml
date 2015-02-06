@@ -5,3 +5,12 @@ suites:
     namespace: Vantoozz\Oboom
     src_path: src
     spec_path: ci/phpspec
+
+extensions:
+  - PhpSpec\Extension\CodeCoverageExtension
+
+code_coverage:
+  format:
+    - clover
+  output:
+    clover: build/logs/clover.xml
