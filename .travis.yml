@@ -10,3 +10,6 @@ install:
 
 script:
   - vendor/bin/phpspec run -v
+
+after_script:
+  - vendor/bin/coveralls
