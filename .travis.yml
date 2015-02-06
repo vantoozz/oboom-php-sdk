@@ -6,10 +6,10 @@ php:
   - hhvm
 
 install:
-  - composer install --prefer-dist --no-interaction --dev
+  - composer install --prefer-dist --no-interaction
 
 script:
   - vendor/bin/phpspec run -v
 
 after_script:
-  - vendor/bin/coveralls -v
+  - vendor/bin/coveralls -v -n
