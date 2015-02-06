@@ -18,11 +18,11 @@ class GuzzleTransport extends AbstractTransport
     private $guzzle;
 
     /**
-     *
+     * @param Client $guzzle
      */
-    public function __construct()
+    public function __construct(Client $guzzle)
     {
-        $this->guzzle = new Client();
+        $this->guzzle = $guzzle;
     }
 
     /**
@@ -44,8 +44,16 @@ class GuzzleTransport extends AbstractTransport
 
         $response = $response->json();
 
-        if (200 !== $response[0]) {
+        if (!is_array($response)) {
+            throw new RuntimeException('Bad response: ' . $response);
+        }
+
+        if (200 !== $response[0] and isset($response[1])) {
             throw new RuntimeException($response[1], $response[0]);
+        }
+
+        if (200 !== $response[0]) {
+            throw new RuntimeException('API error', $response[0]);
         }
 
         return $response;
