@@ -2,6 +2,7 @@
 
 namespace spec\Vantoozz\Oboom\Transport;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Message\ResponseInterface;
 use PhpSpec\ObjectBehavior;
@@ -63,5 +64,15 @@ class GuzzleTransportSpec extends ObjectBehavior
         ])->willReturn($response);
 
         $this->shouldThrow(new RuntimeException('API error', 400))->during('call', [$url]);
+    }
+
+    public function it_handle_guzzle_exceptions(Client $guzzleClient)
+    {
+        $url = 'http://example.com';
+        $guzzleClient->get($url, [
+            'query' => []
+        ])->willThrow(new Exception('Guzzle Exception', 9000));
+
+        $this->shouldThrow(new RuntimeException('Guzzle Exception', 0))->during('call', [$url]);
     }
 }
