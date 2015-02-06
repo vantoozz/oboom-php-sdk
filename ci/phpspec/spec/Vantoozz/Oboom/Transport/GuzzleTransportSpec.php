@@ -15,6 +15,11 @@ class GuzzleTransportSpec extends ObjectBehavior
         $this->beConstructedWith($guzzleClient);
     }
 
+    function it_is_initializable()
+    {
+        $this->shouldHaveType('Vantoozz\Oboom\Transport\GuzzleTransport');
+    }
+
     public function it_calls_oboom_successful(Client $guzzleClient, ResponseInterface $response)
     {
         $url    = 'http://example.com';
